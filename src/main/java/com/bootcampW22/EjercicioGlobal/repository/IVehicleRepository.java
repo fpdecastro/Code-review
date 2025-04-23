@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface IVehicleRepository {
     List<Vehicle> findAll();
+    Boolean existVehicleId(Long id);
+    void addVehicle(Vehicle vehicle);
 }

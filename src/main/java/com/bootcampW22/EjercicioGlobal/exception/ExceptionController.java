@@ -17,5 +17,10 @@ public class ExceptionController {
         return new ResponseEntity<>(exceptionDto, HttpStatus.NOT_FOUND);
     }
 
+    @ExceptionHandler(IdNotUniqueException.class)
+    public ResponseEntity<?> notFound(IdNotUniqueException e){
+        ExceptionDto exceptionDto = new ExceptionDto(e.getMessage());
+        return new ResponseEntity<>(exceptionDto, HttpStatus.NOT_FOUND);
+    }
 
 }

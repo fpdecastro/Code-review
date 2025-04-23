@@ -1,5 +1,7 @@
 package com.bootcampW22.EjercicioGlobal.dto;
 
+import com.bootcampW22.EjercicioGlobal.entity.Vehicle;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -23,4 +25,22 @@ public class VehicleDto {
     private double height;
     private double width;
     private double weight;
+
+    public Vehicle getEntity(){
+        return new Vehicle(
+            this.getId(),
+            this.getBrand(),
+            this.getModel(),
+            this.getRegistration(),
+            this.getColor(),
+            this.getYear(),
+            this.getMax_speed(),
+            this.getPassengers(),
+            this.getFuel_type(),
+            this.getTransmission(),
+            this.getHeight(),
+            this.getWidth(),
+            this.getWeight()
+        );
+    }
 }

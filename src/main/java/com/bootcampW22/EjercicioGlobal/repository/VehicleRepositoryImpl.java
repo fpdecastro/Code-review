@@ -34,4 +34,13 @@ public class VehicleRepositoryImpl implements IVehicleRepository{
 
         listOfVehicles = vehicles;
     }
+
+    public Boolean existVehicleId(Long id){
+        List<Long> listIdsVehicles = this.listOfVehicles.stream().map(vehicle -> vehicle.getId()).toList();
+        return listIdsVehicles.contains(id);
+    }
+
+    public void addVehicle(Vehicle vehicle){
+        this.listOfVehicles.add(vehicle);
+    };
 }
